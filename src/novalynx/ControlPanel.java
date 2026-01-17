@@ -49,7 +49,7 @@ public class ControlPanel {
         addButtonWithSpacing(buttonsPanel, syncBtn);
 
         // Footer
-        JLabel footer = new JLabel("Developed by NovaLynx Team", SwingConstants.CENTER);
+        JLabel footer = new JLabel("Developed by Faiqa Riaz & Hafiz Muhammad Saad", SwingConstants.CENTER);
         footer.setFont(NovaTheme.SUBHEADER_FONT);
         footer.setForeground(NovaTheme.LYNX_BLUE);
         footer.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
