@@ -9,12 +9,15 @@ A comprehensive dashboard to simulate process scheduling and lifecycle managemen
 - **Process Lifecycle Control**: Create, destroy, suspend, resume, block, wakeup, and dispatch processes.
 - **Scheduling Algorithms**:
   - First-Come, First-Served (FCFS)
-  - Priority Scheduling
+  - Priority Scheduling (Preemptive & Non-Preemptive)
   - Round Robin (with configurable time quantum)
 - **Visualizations**:
-  - Real-time Gantt Chart
-  - Process State Queues (Ready, Running, Blocked, Suspended, Completed)
-  - Detailed Process Control Block (PCB) information
+  - **Dynamic Gantt Chart**: Responsive, auto-scaling timeline with clear process bars and time axis.
+  - **Process State Queues**: Minimal, responsive boxes for Ready, Running, Blocked, Suspended, and Completed states.
+  - **Detailed Statistics**: Real-time PCB table showing burst time, remaining time, priorities, and wait/turnaround times.
+- **Simulation Controls**:
+  - **Step-by-Step**: Execute instructions one time unit at a time.
+  - **Auto-Run**: "Run All" feature with a timer to visualize the entire schedule fluidly.
 
 ### 💾 Memory Management
 Simulates memory allocation using a paging mechanism.
@@ -29,10 +32,12 @@ Demonstrates concurrency control and inter-process communication.
 - **Message Passing**: Simulate sending and receiving messages between processes.
 - **Queue Visualization**: Visual queues for processes Waiting, in Critical Section, and Completed.
 
-### 🎨 Modern UI/UX
-- **NovaTheme**: A custom dark-themed design system with deep navy backgrounds and neon accents.
-- **Animations**: Smooth fade-in welcome screen and interactive UI elements.
-- **User-Friendly Controls**: "Pill" shaped buttons and intuitive dialogs for input.
+### 🎨 Modern Minimal UI
+- **NovaTheme**: A custom design system featuring:
+  - **Minimal Aesthetics**: Clean, flat design with a monochrome base and professional color palette.
+  - **Responsive Layout**: UI components that adapt gracefully to window resizing.
+  - **Unified Controls**: A consolidated, horizontal button strip for process management actions.
+  - **High Visibility**: Optimized Gantt chart and status panels for maximum readability.
 
 ## 🚀 Getting Started
 
@@ -45,9 +50,10 @@ Demonstrates concurrency control and inter-process communication.
 1.  **Clone the repository** (or extract the source code).
 2.  **Open the project** in your preferred IDE (NetBeans project files are included).
 3.  **Build and Run**:
-    - **Using Ant**:
+    - **Using CLI**:
       ```bash
-      ant run
+      javac -d build/classes -cp src src/novalynx/*.java
+      java -cp "build/classes;src" novalynx.NovaLynx
       ```
     - **Using IDE**: Run the `novalynx.NovaLynx` class as the main entry point.
 
@@ -64,7 +70,8 @@ total.memory=1048576
   - `NovaLynx.java`: Application entry point.
   - `ControlPanel.java`: Main dashboard.
   - `ProcessManagement.java`: Process scheduling logic and UI.
-  - `MemoryManager.java`: core memory logic.
+  - `Scheduler.java`: Scheduling algorithms (FCFS, Priority, RR) and logic.
+  - `MemoryManager.java`: Core memory logic.
   - `SynchronizationPanel.java`: Synchronization demos.
   - `NovaTheme.java`: UI styling and constants.
 
