@@ -39,7 +39,20 @@ Demonstrates concurrency control and inter-process communication.
   - **Unified Controls**: A consolidated, horizontal button strip for process management actions.
   - **High Visibility**: Optimized Gantt chart and status panels for maximum readability.
 
-## 🚀 Getting Started
+## � Screenshots
+
+| **Dashboard** | **Process Management** |
+|:---:|:---:|
+| ![Dashboard](screenshots/dashboard.png) | ![Process Management](screenshots/process_management.png) |
+| *Control Panel & Overview* | *Gantt Chart & Scheduling* |
+
+| **Memory Management** | **Process Synchronization** |
+|:---:|:---:|
+| ![Memory Management](screenshots/memory_management.png) | ![Process Synchronization](screenshots/synchronization.png) |
+| *Paging & Allocation* | *Semaphores & Message Passing* |
+
+
+## �🚀 Getting Started
 
 ### Prerequisites
 - Java Development Kit (JDK) 8 or higher.

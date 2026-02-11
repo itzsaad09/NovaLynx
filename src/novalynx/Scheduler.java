@@ -85,25 +85,18 @@ public class Scheduler {
         ganttChart.removeIf(entry -> entry.getProcess() == pcb);
     }
 
-    /**
-     * Executes one step of the simulation.
-     * Returns true if a process was executed, false if nothing to do.
-     */
     public boolean stepSimulation() {
-        // 1. Move processes from pool to readyQueue based on arrival time
         updateQueueForArrivals();
 
-        // 2. Identify available processes (already in readyQueue or currently running)
         List<PCB> available = readyQueue.stream()
                 .filter(p -> p.getState() == ProcessState.READY || p.getState() == ProcessState.RUNNING)
                 .collect(Collectors.toList());
 
         if (available.isEmpty()) {
-            // Check if there are processes that haven't arrived yet
             boolean moreToArrive = processPool.stream()
                     .anyMatch(p -> p.getArrivalTime() > currentTime && p.getState() != ProcessState.TERMINATED);
             if (moreToArrive) {
-                currentTime++; // CPU Idle
+                currentTime++;
                 return true;
             }
             return false;
@@ -207,9 +200,8 @@ public class Scheduler {
     private void executeOneTimeUnit(PCB pcb) {
         int start = currentTime;
         pcb.setState(ProcessState.RUNNING);
-        currentRunningProcess = pcb; // Track which one is running
+        currentRunningProcess = pcb;
 
-        // Execute for 1 unit
         currentTime += 1;
         pcb.setRemainingTime(pcb.getRemainingTime() - 1);
 
